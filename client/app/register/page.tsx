@@ -96,7 +96,7 @@ export default function RegisterPage() {
                                     type="password"
                                     required
                                     className="block w-full bg-white/5 border border-white/5 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:bg-white/10 transition-all font-medium"
-                                    placeholder="Password must be at least 6 characters long"
+                                    placeholder="Minimum 6 characters required"
                                     value={formData.password}
                                     onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                                 />
