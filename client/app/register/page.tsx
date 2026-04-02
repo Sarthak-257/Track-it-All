@@ -24,7 +24,7 @@ export default function RegisterPage() {
         setLoading(true);
 
         try {
-            await API.post('/auth/register', formData);
+            await API.post('/api/auth/register', formData);
             router.push(`/verify-otp?email=${encodeURIComponent(formData.email)}&name=${encodeURIComponent(formData.name)}`);
         } catch (err: any) {
             setError(err.response?.data?.message || 'Signup failed. Please check your internet connection and try again.');
