@@ -24,7 +24,7 @@ export default function LoginPage() {
         setLoading(true);
 
         try {
-            const { data } = await API.post('/api/v1/login', formData);
+            const { data } = await API.post('/api/auth/login', formData);
             setUser(data);
             router.push('/dashboard');
         } catch (err: any) {
