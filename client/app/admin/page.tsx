@@ -22,7 +22,7 @@ export default function AdminPage() {
 
         const fetchUsers = async () => {
             try {
-                const { data } = await API.get('/admin/users');
+                const { data } = await API.get('/api/auth/admin/users');
                 setUsers(data);
             } catch (error) {
                 console.error('Error fetching users:', error);
