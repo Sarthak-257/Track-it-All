@@ -27,7 +27,7 @@ export default function RegisterPage() {
             await API.post('/api/auth/register', formData);
             router.push(`/verify-otp?email=${encodeURIComponent(formData.email)}&name=${encodeURIComponent(formData.name)}`);
         } catch (err: any) {
-            setError(err.response?.data?.message || 'Signup failed. Please check your internet connection and try again.');
+            setError(err.response?.data?.message || 'Signup failed. Please try again.');
         } finally {
             setLoading(false);
         }
@@ -66,7 +66,7 @@ export default function RegisterPage() {
                                     type="text"
                                     required
                                     className="block w-full bg-white/5 border border-white/5 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:bg-white/10 transition-all font-medium"
-                                    placeholder="e.g. John Doe"
+                                    placeholder="e.g. John"
                                     value={formData.name}
                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                 />
@@ -96,7 +96,7 @@ export default function RegisterPage() {
                                     type="password"
                                     required
                                     className="block w-full bg-white/5 border border-white/5 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:bg-white/10 transition-all font-medium"
-                                    placeholder="••••••••"
+                                    placeholder="Password must be at least 6 characters long"
                                     value={formData.password}
                                     onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                                 />
